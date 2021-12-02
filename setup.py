@@ -17,6 +17,7 @@ setup(
     name='pomerium_http_adapter',
     description='Transport adapter for requests to handle Pomerium authentication',
     long_description=long_description,
+    long_description_content_type='text/markdown',
     keywords=['pomerium', 'requests', 'adapter'],
     classifiers=[
         'Development Status :: 3 - Alpha',
@@ -30,7 +31,7 @@ setup(
     license='Apache License 2.0',
     author='Joel Rangsmo',
     author_email='joel.rangsmo@elastx.se',
-    version='0.3',
+    version='0.4',
     url='https://github.com/elastx/python-pomerium_http_adapter',
     download_url='https://github.com/elastx/python-pomerium_http_adapter/archive/v0.2.tar.gz',
     packages=['pomerium_http_adapter'],
