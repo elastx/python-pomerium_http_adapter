@@ -8,6 +8,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
+version = '0.5'
 source_directory = os.path.abspath(os.path.dirname(__file__))
 
 with open(os.path.join(source_directory, 'README.md'), 'r') as file_handle:
@@ -31,9 +32,10 @@ setup(
     license='Apache License 2.0',
     author='Joel Rangsmo',
     author_email='joel.rangsmo@elastx.se',
-    version='0.4',
+    version=version,
     url='https://github.com/elastx/python-pomerium_http_adapter',
-    download_url='https://github.com/elastx/python-pomerium_http_adapter/archive/v0.2.tar.gz',
+    download_url=(
+        'https://github.com/elastx/python-pomerium_http_adapter/archive/v%s.tar.gz' % version),
     packages=['pomerium_http_adapter'],
     package_dir={'pomerium_http_adapter': 'pomerium_http_adapter'},
     install_requires=['requests>=2.23.0'])
