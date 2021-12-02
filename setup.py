@@ -21,7 +21,7 @@ setup(
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache License 2.0',
+        'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
@@ -30,7 +30,7 @@ setup(
     license='Apache License 2.0',
     author='Joel Rangsmo',
     author_email='joel.rangsmo@elastx.se',
-    version='0.2',
+    version='0.3',
     url='https://github.com/elastx/python-pomerium_http_adapter',
     download_url='https://github.com/elastx/python-pomerium_http_adapter/archive/v0.2.tar.gz',
     packages=['pomerium_http_adapter'],
