@@ -8,7 +8,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
-version = '0.5'
+version = '0.6'
 source_directory = os.path.abspath(os.path.dirname(__file__))
 
 with open(os.path.join(source_directory, 'README.md'), 'r') as file_handle:
