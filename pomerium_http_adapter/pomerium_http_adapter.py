@@ -196,16 +196,23 @@ class Pomerium(object):
         except Exception as original_exception:
             raise Exception('%s: "%s"' % (error_message, original_exception))
 
-        if not type(jwt_data_parsed) is dict and not 'exp' in jwt_data_parsed.keys():
+        if not type(jwt_data_parsed) is dict:
             raise Exception(error_message)
 
-        try:
-            expiry = int(jwt_data_parsed['exp'])
+        if 'exp' in jwt_data_parsed.keys():
+            try:
+                expiry = int(jwt_data_parsed['exp'])
 
-        except Exception as original_exception:
-            raise Exception('%s: "%s"' % (error_message, original_exception))
+            except Exception as original_exception:
+                raise Exception('%s: "%s"' % (error_message, original_exception))
 
-        _log.debug('Extracted expiry time: %i' % expiry)
+            _log.debug('Extracted expiry time: %i' % expiry)
+
+        # Seems that expiry isn't always passed on, set token to expire in 1 hour in those cases
+        else:
+            expiry = int(time.time() + 3600)
+
+            _log.debug('Expiry not found in JWT, expiry time set to: %i' % expiry)
 
         return expiry
 
